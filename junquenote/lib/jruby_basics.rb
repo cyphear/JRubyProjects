@@ -17,14 +17,14 @@ JemmyProperties.set_current_timeout 'DialogWaiter.WaitDialogTimeout', 3000
 JemmyProperties.set_current_output TestOut.get_null_output
 
 JunqueNoteApp.new
-main_window = JFrameOperator.new 'JunqueNote'
+@main_window = JFrameOperator.new 'JunqueNote'
 
-puts "The main window's object ID is #{main_window.object_id}."
+puts "The main window's object ID is #{@main_window.object_id}."
 
-edit = JTextAreaOperator.new main_window
+edit = JTextAreaOperator.new @main_window
 edit.type_text "this is some text"
 
-menu = JMenuBarOperator.new main_window
+menu = JMenuBarOperator.new @main_window
 menu.push_menu_no_block 'File|Exit' , '|' 
 
 dialog = JDialogOperator.new "Quittin' time"
